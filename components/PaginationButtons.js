@@ -12,6 +12,7 @@ export const PaginationButtons = () => {
       {startIndex >= 10 && (
         <Link
           href={`/search?term=${router.query.term}&start=${startIndex - 10}`}
+          passHref
         >
           <div className='flex flex-grow flex-col items-center cursor-pointer hover:underline'>
             <ChevronLeftIcon className='h-5' />
@@ -20,7 +21,10 @@ export const PaginationButtons = () => {
         </Link>
       )}
 
-      <Link href={`/search?term=${router.query.term}&start=${startIndex + 10}`}>
+      <Link
+        href={`/search?term=${router.query.term}&start=${startIndex + 10}`}
+        passHref
+      >
         <div className='flex flex-grow flex-col items-center cursor-pointer hover:underline'>
           <ChevronRightIcon className='h-5' />
           <p>Next</p>
